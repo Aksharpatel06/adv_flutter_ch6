@@ -63,23 +63,29 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListTile(
-                  title: const Text('Theme'),
-                  trailing: GestureDetector(
-                      onTap: themeController.changeTheme,
-                      child: themeController.isDarkMode.value
-                          ? const Icon(Icons.dark_mode)
-                          : const Icon(Icons.sunny)),
-                ),
-                ListTile(
-                  title: const Text('Set-up Navigation'),
-                  trailing: GestureDetector(
-                    onTap: () {
-                      Get.to(const DetailsScreen(), transition: Transition.fade);
-                    },
-                    child: const Icon(Icons.arrow_forward),
+                Card(
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: const Text('Theme'),
+                        trailing: GestureDetector(
+                            onTap: themeController.changeTheme,
+                            child: themeController.isDarkMode.value
+                                ? const Icon(Icons.dark_mode)
+                                : const Icon(Icons.sunny)),
+                      ),
+                      ListTile(
+                        title: const Text('Set-up Navigation'),
+                        trailing: GestureDetector(
+                          onTap: () {
+                            Get.to(const DetailsScreen(),duration: const Duration(milliseconds: 1000), transition: Transition.fade);
+                          },
+                          child: const Icon(Icons.arrow_forward),
+                        ),
+                      ),
+                    ],
                   ),
-                )
+                ),
               ],
             ),
           ),
